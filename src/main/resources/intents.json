@@ -1,0 +1,69 @@
+{
+  "intents": [
+    {
+      "intent": "academic_calendar",
+      "category": "Academic Calendar",
+      "questions": [
+        "When does the semester start and end?",
+        "What are the important academic dates this semester?",
+        "When is the last date to add or drop a course?",
+        "When are the semester breaks and holidays?",
+        "When does course registration open?",
+        "What is the deadline to withdraw from a course?",
+        "Where can I find the latest academic calendar?"
+      ]
+    },
+    {
+      "intent": "exams_and_grading",
+      "category": "Exams and Grading",
+      "questions": [
+        "When will the exam timetable be published?",
+        "Where can I check my exam schedule?",
+        "What should I do if two exams are scheduled at the same time?",
+        "How can I view my grades?",
+        "How do I apply for a re-evaluation of my results?",
+        "What is the process for requesting a make-up exam?",
+        "Where can I find the rules for exam attendance and eligibility?"
+      ]
+    },
+    {
+      "intent": "course_registration",
+      "category": "Courses and Registration",
+      "questions": [
+        "How do I register for courses for the next semester?",
+        "How can I see which courses are available?",
+        "What should I do if a course I need is full?",
+        "How do I change my course or lab slot?",
+        "Where can I find course prerequisites?",
+        "How can I check my current timetable?",
+        "Who should I contact if I have a problem with course registration?"
+      ]
+    },
+    {
+      "intent": "fees_and_financial_aid",
+      "category": "Fees and Financial Aid",
+      "questions": [
+        "Where can I see the fee payment schedule?",
+        "How do I pay my semester fees?",
+        "What payment methods are accepted for fees?",
+        "How can I download my fee receipt?",
+        "What should I do if my fee payment is not reflected?",
+        "How do I apply for a scholarship or financial aid?",
+        "Who can help me with a fee-related issue?"
+      ]
+    },
+    {
+      "intent": "campus_services",
+      "category": "Campus Services",
+      "questions": [
+        "How do I contact the campus health centre?",
+        "Where can I find information about hostel services?",
+        "How can I report an issue with campus facilities?",
+        "Where can I find library hours and borrowing information?",
+        "How do I get help with my student account or login?",
+        "Where can I find campus transport information?",
+        "Which office should I contact for general student support?"
+      ]
+    }
+  ]
+}

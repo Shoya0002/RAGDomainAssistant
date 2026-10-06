@@ -1,0 +1,31 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/vit_assistant
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+
+# Custom app settings — read via @Value or a @ConfigurationProperties class
+rag:
+  llm:
+    api-url: https://api.openai.com/v1/chat/completions
+    api-key: ${LLM_API_KEY:}
+    model: gpt-4o-mini
+  embedding:
+    api-url: https://api.openai.com/v1/embeddings
+    api-key: ${LLM_API_KEY:}
+    model: text-embedding-3-small
+  chunk:
+    size: 800
+    overlap: 100
+  retrieval:
+    top-k: 5
