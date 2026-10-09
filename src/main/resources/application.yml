@@ -2,10 +2,20 @@ server:
   port: 8080
 
 spring:
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 50MB
+      max-request-size: 50MB
+      file-size-threshold: 2KB
   datasource:
-    url: jdbc:postgresql://localhost:5432/vit_assistant
-    username: postgres
-    password: postgres
+    url: ${SPRING_DATASOURCE_URL:jdbc:h2:mem:vit_assistant;DB_CLOSE_DELAY=-1;MODE=PostgreSQL}
+    username: ${SPRING_DATASOURCE_USERNAME:sa}
+    password: ${SPRING_DATASOURCE_PASSWORD:}
+    driver-class-name: ${SPRING_DATASOURCE_DRIVER:org.h2.Driver}
+  h2:
+    console:
+      enabled: true
   jpa:
     hibernate:
       ddl-auto: update
@@ -17,13 +27,13 @@ spring:
 # Custom app settings — read via @Value or a @ConfigurationProperties class
 rag:
   llm:
-    api-url: https://api.openai.com/v1/chat/completions
+    api-url: ${LLM_API_URL:https://generativelanguage.googleapis.com/v1beta/openai/chat/completions}
     api-key: ${LLM_API_KEY:}
-    model: gpt-4o-mini
+    model: ${LLM_MODEL:gemini-2.5-flash}
   embedding:
-    api-url: https://api.openai.com/v1/embeddings
+    api-url: ${EMBEDDING_API_URL:https://generativelanguage.googleapis.com/v1beta/openai/embeddings}
     api-key: ${LLM_API_KEY:}
-    model: text-embedding-3-small
+    model: ${EMBEDDING_MODEL:gemini-embedding-001}
   chunk:
     size: 800
     overlap: 100

@@ -36,6 +36,13 @@ public class GlobalExceptionHandler {
             return ResponseEntity.status(errorResponse.getStatusCode()).body(Map.of("error", error));
         }
 
+        if (ex instanceof org.springframework.web.multipart.MultipartException multipartEx) {
+            Throwable root = org.springframework.core.NestedExceptionUtils.getMostSpecificCause(multipartEx);
+            String message = root != null && root.getMessage() != null ? root.getMessage() : multipartEx.getMessage();
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body(Map.of("error", "File upload error: " + message));
+        }
+
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                 .body(Map.of("error", ex.getMessage() == null ? "Unexpected error" : ex.getMessage()));
     }

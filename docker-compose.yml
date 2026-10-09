@@ -15,3 +15,5 @@ services:
 
 volumes:
   vit_assistant_data:
+
+
